@@ -396,6 +396,12 @@ open class KolodaView: UIView, DraggableCardDelegate {
                 }
 
                 _self.visibleCards.last?.isHidden = false
+
+                 _self.visibleCards.last?.alpha = 0
+                UIView.animate(withDuration: 0.23, animations: {
+                     _self.visibleCards.last?.alpha = 1
+                })
+
                 _self.animationSemaphore.decrement()
                 _self.delegate?.koloda(_self, didSwipeCardAt: swipedCardIndex, in: direction)
                 _self.delegate?.koloda(_self, didShowCardAt: _self.currentCardIndex)
@@ -430,11 +436,6 @@ open class KolodaView: UIView, DraggableCardDelegate {
         } else {
             addSubview(lastCard)
         }
-
-        lastCard.alpha = 0
-        UIView.animate(withDuration: 0.23, animations: {
-            lastCard.alpha = 1
-        })
 
         visibleCards.append(lastCard)
     }
