@@ -430,6 +430,12 @@ open class KolodaView: UIView, DraggableCardDelegate {
         } else {
             addSubview(lastCard)
         }
+
+        lastCard.alpha = 0
+        UIView.animate(withDuration: 0.23, animations: {
+            lastCard.alpha = 1
+        })
+
         visibleCards.append(lastCard)
     }
 
