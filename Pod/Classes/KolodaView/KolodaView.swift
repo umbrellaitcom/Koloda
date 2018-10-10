@@ -398,7 +398,7 @@ open class KolodaView: UIView, DraggableCardDelegate {
                 _self.visibleCards.last?.isHidden = false
 
                  _self.visibleCards.last?.alpha = 0
-                UIView.animate(withDuration: 0.23, animations: {
+                UIView.animate(withDuration: 0.1, animations: {
                      _self.visibleCards.last?.alpha = 1
                 })
 
